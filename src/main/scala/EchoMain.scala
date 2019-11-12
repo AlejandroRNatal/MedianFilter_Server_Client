@@ -1,7 +1,7 @@
 
 import akka.actor.{Actor, ActorSystem, Props}
 import scala.io.StdIn
-import MedianFilter.MedianFilter
+//import MedianFilter
 
 case class Message(msg:String)
 case object Bye
@@ -11,15 +11,24 @@ class ImageActor extends Actor {
   def receive ={
     //should handle here between seq and parallel
     //case Message(s) => println(s"Something with $s\n")
-    //case Bye => println("Bye!")
-//    case "p"=> {
-//        val mf =  MedianFilter()
-//
-//      }
-//
-//    case "s" =>{
-//      val mf = MedianFilter
-//    }
+    case Bye => println("Bye!")
+    case "p"=> {
+      val t0 = System.nanoTime()
+      val mf =  new MedianFilter()
+      mf.do_all_par("test.jpg")
+      val t1 = System.nanoTime()
+      val fin = t1-t0
+      println(s"Parallel Result time:$fin\n")
+
+      }
+    case "s" =>{
+      val t0 = System.nanoTime()
+      val mf = new MedianFilter()
+      mf.do_all_seq("test.jpg")
+      val t1 = System.nanoTime()
+      val fin = t1-t0
+      println(s"Sequential Result time:$fin\n")
+    }
             //do parallel stuff here
     case _ => println("Unknown param received")
   }

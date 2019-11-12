@@ -1,12 +1,13 @@
 
-package MedianFilter
+
+
 import javax.imageio.ImageIO
 import java.awt.image.BufferedImage
 import java.io.File
 
-import scala.collection.parallel.ParSeq
+//import scala.collection.parallel.ParSeq
 import scala.collection.parallel
-import scala.collection.parallel.mutable.ParArray
+//import scala.collection.parallel.mutable.ParArray
 
 class MedianFilter {
 
