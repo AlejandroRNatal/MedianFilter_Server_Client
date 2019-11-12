@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fe0965c-f4d7-4853-ad38-d6a03f175e51" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/EchoMain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/EchoMain.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/MedianFilter.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/MedianFilter.scala" afterDir="false" />
@@ -14,6 +15,9 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="39" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -31,6 +35,16 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alejandro Natal\IdeaProjects\MedianFilter_Server_Client" />
+      <recent name="C:\Users\Alejandro Natal\IdeaProjects\MedianFilter_Server_Client\src\main\scala" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alejandro Natal\IdeaProjects\MedianFilter_Server_Client" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -43,6 +57,20 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="EchoMain" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="EchoMain" />
+      <module name="MedianFilter_Server_Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EchoMain" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
     <option name="availableProjects">
@@ -71,7 +99,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$/build.sbt" value="1531505468" />
+        <entry key="$PROJECT_DIR$" value="3147015523793" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="3124104090" />
         <entry key="$PROJECT_DIR$/project/build.properties" value="3724303870" />
       </map>
     </option>
@@ -87,6 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573507607667</updated>
       <workItem from="1573507611335" duration="10391000" />
+      <workItem from="1573587688805" duration="4498000" />
     </task>
     <servers />
   </component>
@@ -98,10 +128,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/EchoMain.scala</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MedianFilter_Server_Client$EchoMain.ic" NAME="EchoMain Coverage Results" MODIFIED="1573590494065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

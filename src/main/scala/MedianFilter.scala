@@ -27,25 +27,30 @@ class MedianFilter {
 
     val kernel = 3
     //val mid:Int = kernel / 2
-    var neighs =  Array[Int](kernel * kernel)//should init to 0 all
-    //neighs = Array.fill(kernel,kernel)(0)
+    var neighs =  new Array[Int](kernel * kernel)//should init to 0 all
+    neighs = Array.fill(kernel *kernel)(0)
     val height = img.getHeight()
     val width = img.getWidth()
     //check if position is near image borders
 
     var result = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
 
-    for( i <- 1 until width)
+    for( i <- 1 until width-1)
     {
 
-      for(j <- 1 until height)
+      for(j <- 1 until height-1)
         {
           neighs(0) = img.getRGB(i - 1, j-1)
           neighs(1) = img.getRGB(i, j-1)
           neighs(2) = img.getRGB(i + 1, j-1)
+
           neighs(3) = img.getRGB(i-1, j)
           neighs(4) = img.getRGB(i, j)
           neighs(5) = img.getRGB(i + 1, j)
+
+//          println(j)
+//          println(i)
+//          println(height)
           neighs(6) = img.getRGB(i - 1, j+1)
           neighs(7) = img.getRGB(i, j+1)
           neighs(8) = img.getRGB(i + 1, j+1)
@@ -64,17 +69,17 @@ class MedianFilter {
   def par_median_filter(img:BufferedImage):BufferedImage ={
     val kernel = 3
     var neighs = Array[Int](kernel * kernel)//should init to 0 all
-
+    neighs = Array.fill(kernel *kernel)(0)
     val height = img.getHeight()
     val width = img.getWidth()
     //check if position is near image borders
 
     var result = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
 
-    for( i <- (1 until width).par)
+    for( i <- (1 until width -1).par)
     {
 
-      for(j <- (1 until height).par)
+      for(j <- (1 until height -1).par)
       {
         neighs(0) = img.getRGB(i - 1, j-1)
         neighs(1) = img.getRGB(i, j-1)
