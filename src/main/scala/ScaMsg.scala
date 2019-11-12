@@ -8,6 +8,7 @@ class Server extends Actor {
   var clients = List[(String, ActorRef)]();
 
   def receive = {
+
     case Connect(username) => {
       broadcast(Info(f"$username%s joined the chat"))
       clients = (username,sender) :: clients
