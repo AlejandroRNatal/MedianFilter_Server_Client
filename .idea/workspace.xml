@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fe0965c-f4d7-4853-ad38-d6a03f175e51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/result.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/EchoMain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/EchoMain.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/MedianFilter.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/MedianFilter.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ImageActor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/ImageActor.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573507607667</updated>
       <workItem from="1573507611335" duration="10391000" />
-      <workItem from="1573587688805" duration="4498000" />
+      <workItem from="1573587688805" duration="7015000" />
     </task>
     <servers />
   </component>

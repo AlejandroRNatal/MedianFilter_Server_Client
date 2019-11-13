@@ -26,7 +26,7 @@ class ImageActor extends Actor {
   def parallel():BufferedImage = {
 
     val t0 = System.nanoTime()
-    val img = mf.do_all_par("test.jpg")
+    val img = mf.do_all_par("angular.png")
     val t1 = System.nanoTime()
     val fin = t1-t0
     println(s"Parallel Result time:$fin\n")
