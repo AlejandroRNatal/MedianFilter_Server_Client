@@ -5,6 +5,8 @@ import javax.imageio.ImageIO
 import java.awt.image.BufferedImage
 import java.io.File
 
+import scala.collection.parallel.mutable.ParArray
+
 //import scala.collection.parallel.ParSeq
 import scala.collection.parallel
 //import scala.collection.parallel.mutable.ParArray
@@ -66,35 +68,44 @@ class MedianFilter {
     return result
   }
 
+  def neighbors( i: Int, j :Int, img:BufferedImage): ParArray[Int] = {
+    val kernel = 3
+    var n = new ParArray[Int](kernel * kernel)
+
+    n(0) = img.getRGB(i - 1, j-1)
+    n(1) = img.getRGB(i, j-1)
+    n(2) = img.getRGB(i + 1, j-1)
+    n(3) = img.getRGB(i-1, j)
+    n(4) = img.getRGB(i, j)
+    n(5) = img.getRGB(i + 1, j)
+    n(6) = img.getRGB(i - 1, j+1)
+    n(7) = img.getRGB(i, j+1)
+    n(8) = img.getRGB(i + 1, j+1)
+
+    return n.seq.sorted.toArray.par
+  }
+
   def par_median_filter(img:BufferedImage):BufferedImage ={
     val kernel = 3
-    var neighs = Array[Int](kernel * kernel)//should init to 0 all
-    neighs = Array.fill(kernel *kernel)(0)
+    var neighs = ParArray[Int](kernel * kernel)//should init to 0 all
+    //neighs = Array.fill(kernel *kernel)(0)
+
     val height = img.getHeight()
     val width = img.getWidth()
     //check if position is near image borders
 
     var result = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
 
-    for( i <- (1 until width -1).par)
+
+    for{ i <- (1 until width -1).par
+         j <- (1 until height -1).par
+         neighs = neighbors(i,j,img)
+      }
     {
 
-      for(j <- (1 until height -1).par)
-      {
-        neighs(0) = img.getRGB(i - 1, j-1)
-        neighs(1) = img.getRGB(i, j-1)
-        neighs(2) = img.getRGB(i + 1, j-1)
-        neighs(3) = img.getRGB(i-1, j)
-        neighs(4) = img.getRGB(i, j)
-        neighs(5) = img.getRGB(i + 1, j)
-        neighs(6) = img.getRGB(i - 1, j+1)
-        neighs(7) = img.getRGB(i, j+1)
-        neighs(8) = img.getRGB(i + 1, j+1)
-
-        neighs.sorted
+//        neighs.seq.sorted.toArray.par
+        //neighs ++= neighbors(i,j,img)
         result.setRGB( i, j ,neighs(4))
-      }
-
     }
 
 
@@ -110,7 +121,7 @@ class MedianFilter {
 
       val img = read_image(filename)
       val res = seq_median_filter(img)
-      save_result_img(res, "result.jpg")
+      save_result_img(res, "seq-result.jpg")
       return res
   }
 
@@ -118,7 +129,7 @@ class MedianFilter {
 
     val img = read_image(filename)
     val res = par_median_filter(img)
-    save_result_img(res, "result.jpg")
+    save_result_img(res, "parallel-result.jpg")
     return res
   }
 

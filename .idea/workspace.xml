@@ -5,7 +5,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/result.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/EchoMain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/EchoMain.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/MedianFilter.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/MedianFilter.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/EchoMain$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/EchoMain$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/EchoMain$delayedInit$body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/EchoMain$delayedInit$body.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/EchoMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/EchoMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ImageActor$$anonfun$receive$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/ImageActor$$anonfun$receive$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ImageActor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/ImageActor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/MedianFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/MedianFilter.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +39,7 @@
   <component name="ProjectId" id="1TUHA5rhvDJLbPVrfdZ6dcqVN05" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -116,7 +123,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573507607667</updated>
       <workItem from="1573507611335" duration="10391000" />
-      <workItem from="1573587688805" duration="7015000" />
+      <workItem from="1573587688805" duration="17076000" />
     </task>
     <servers />
   </component>
@@ -140,9 +147,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/EchoMain.scala</url>
-          <line>25</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/main/scala/MedianFilter.scala</url>
+          <line>127</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
