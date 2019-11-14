@@ -13,20 +13,20 @@ class ImageActor extends Actor {
 
   val mf = new MedianFilter()
 
-  def sequential():BufferedImage ={
+  def sequential(filename:String):BufferedImage ={
     val t0 = System.nanoTime()
     //    val mf = new MedianFilter()
-    val img = mf.do_all_seq("angular.png")
+    val img = mf.do_all_seq(filename)
     val t1 = System.nanoTime()
     val fin = t1-t0
     println(s"Sequential Result time:$fin\n")
     return img
   }
 
-  def parallel():BufferedImage = {
+  def parallel(filename:String):BufferedImage = {
 
     val t0 = System.nanoTime()
-    val img = mf.do_all_par("angular.png")
+    val img = mf.do_all_par(filename)
     val t1 = System.nanoTime()
     val fin = t1-t0
     println(s"Parallel Result time:$fin\n")
@@ -55,16 +55,16 @@ class ImageActor extends Actor {
 
   def receive ={
     //should handle here between seq and parallel
-    //case Message(s) => println(s"Something with $s\n")
+    case s:String => visualize("sequential_result", sequential(s))
     case Bye => println("Bye!")
-    case "p"=> {
-      visualize("parallel_result", parallel())
-
-    }
-    case "s" =>{
-      visualize("sequential_result", sequential())
-
-    }
+//    case "p"=> {
+//      visualize("parallel_result", parallel())
+//
+//    }
+//    case "s" =>{
+//      visualize("sequential_result", sequential())
+//
+//    }
     //do parallel stuff here
     case _ => println("Unknown param received")
   }
@@ -76,23 +76,23 @@ class ImageActor2 extends Actor {
 
   val mf = new MedianFilter()
 
-  def sequential():BufferedImage ={
+  def sequential(filename:String):BufferedImage ={
     val t0 = System.nanoTime()
     //    val mf = new MedianFilter()
-    val img = mf.do_all_seq("angular.png")
+    val img = mf.do_all_seq(filename)
     val t1 = System.nanoTime()
-    val fin = t1-t0
-    println(s"Sequential Result time:$fin\n")
+    val fin = (t1-t0) * 1.0 / 1E9
+    println(s"Sequential Result time:$fin s\n")
     return img
   }
 
-  def parallel():BufferedImage = {
+  def parallel(filename:String):BufferedImage = {
 
     val t0 = System.nanoTime()
-    val img = mf.do_all_par("angular.png")
+    val img = mf.do_all_par(filename)
     val t1 = System.nanoTime()
-    val fin = t1-t0
-    println(s"Parallel Result time:$fin\n")
+    val fin = (t1-t0) * 1.0 / 1E9
+    println(s"Parallel Result time:$fin s\n")
 
     return img
   }
@@ -118,17 +118,9 @@ class ImageActor2 extends Actor {
 
   def receive ={
     //should handle here between seq and parallel
-    //case Message(s) => println(s"Something with $s\n")
+    case s:String => visualize("parallel_result", parallel(s))
     case Bye => println("Bye!")
-    case "s"=> {
-      visualize("parallel_result", parallel())
 
-    }
-    case "p" =>{
-      visualize("sequential_result", sequential())
-
-    }
-    //do parallel stuff here
     case _ => println("Unknown param received")
   }
 
